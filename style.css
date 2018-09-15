@@ -1,0 +1,52 @@
+body {
+	background: url("bg.jpeg");
+}
+
+.shadowed {
+	box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.2),
+	-4px -1px 8px 0 rgba(0, 0, 0, 0.15);
+}
+
+#resume_main {
+	position: relative;
+	height: 500px;
+	width: 500px;
+	margin: 180px auto 0 auto;
+	background-color: #9ae1a6;
+	border-radius: 10px;
+	
+}
+
+article#resume_text{
+	position: absolute;
+	left: 0;
+	right: 0;
+	width: 80%;
+	margin: 140px auto 20px auto;
+	font-family: Microsoft JhengHei;
+	color: #f4fcf6;
+}
+
+#resume_text .header{
+	font-size: 60px;
+	font-weight: bold;
+	text-align: center;
+	margin: 0;
+}
+
+#resume_text hr {
+	border: 0; 
+	height: 1px; 
+	background-image: -webkit-linear-gradient(left, #f0f0f000, #eeeeeebb, #f0f0f000);
+}
+
+#avatar {
+	position: absolute;
+	border-radius: 50%;
+	left: 0;
+	right: 0;
+	width: 200px;
+	height: 200px;
+	display: block;
+	margin: -80px auto;
+}
