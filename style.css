@@ -7,6 +7,25 @@ body {
 	-4px -1px 8px 0 rgba(0, 0, 0, 0.15);
 }
 
+.bold {
+	font-weight: bold;
+}
+
+p {
+	font-family: 'Noto Serif JP', sans-serif;
+	color: #f4fcf6;
+}
+
+a:link, a:visited {
+	text-decoration: none;
+	color: #d6f3db;
+}
+
+a:hover, a:active {
+	text-decoration: underline;
+	color: #d6f3db;
+}
+
 #resume_main {
 	position: relative;
 	height: 500px;
@@ -17,14 +36,29 @@ body {
 	
 }
 
-article#resume_text{
+div#resume_text{
 	position: absolute;
 	left: 0;
 	right: 0;
 	width: 80%;
 	margin: 140px auto 20px auto;
-	font-family: Microsoft JhengHei;
-	color: #f4fcf6;
+}
+
+div#small_text_area {
+	margin-left: 10%;
+	margin-right: 10%;
+}
+
+#small_text_area p{
+	font-size: 18px;
+	line-height: 1.8;
+}
+
+#resume_footer p {
+	font-size: 18px;
+	line-height: 1;
+	text-align: right;
+	margin-right: 10%; 
 }
 
 #resume_text .header{
@@ -38,6 +72,16 @@ article#resume_text{
 	border: 0; 
 	height: 1px; 
 	background-image: -webkit-linear-gradient(left, #f0f0f000, #eeeeeebb, #f0f0f000);
+}
+
+#resume_footer {
+	position: absolute;
+	bottom: 0;
+	height: 100px;
+	width: 100%;
+	padding: 0 0px 0 0px;
+	text-align: center;
+	font-stretch: expanded;
 }
 
 #avatar {
