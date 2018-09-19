@@ -33,7 +33,7 @@ a:hover, a:active {
 	margin: 180px auto 0 auto;
 	background-color: #9ae1a6;
 	border-radius: 10px;
-	
+	display: none;
 }
 
 div#resume_text{
@@ -89,8 +89,19 @@ div#small_text_area {
 	border-radius: 50%;
 	left: 0;
 	right: 0;
+	width: 50px;
+	height: 50px;
+	display: block;
+	margin: 10% auto auto auto;
+	opacity: 0.3;
+	transition: opacity 1s, transform 1s, width 1.1s, height 1.1s;
+}
+
+#avatar:hover {
+	transition: opacity 1s, transform 1s, width 1.1s, height 1.1s;
+	transition-time-function: ease-in-out;
+	opacity: 1;
 	width: 200px;
 	height: 200px;
-	display: block;
-	margin: -80px auto;
+	transform: rotate(1800deg);
 }
