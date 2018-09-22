@@ -4,22 +4,32 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link href="https://fonts.googleapis.com/css?family=Emblema+One" rel="stylesheet">
-	<!--script src="script.js"></script-->
+	<script src="script.js"></script>
     <title>FAV. BANDS</title>
 </head>
 <body>
 	<div id="top_nav">
-		<i class="fa fa-bars"></i>
-		<i class="fa fa-search"></i>
+		<i class="fa fa-bars fa-lg" id="bar_btn" onclick="toggle_nav()"></i>
+		<i class="fa fa-search fa-lg" id="search_btn"></i>
 		<h2 class="site_title">FAV. BANDS</h2>
 	</div>
 	<div id="extend_nav">
-		<a href="#">toe</a>
-		<a href="#">Musical Style</a>
-		<a href="#">Members</a>
-		<a href="#">Albums</a>
-	</div>		
-	<div class="content">
+		<i class="fa fa-close fa-lg" onclick="toggle_nav()"></i>
+		<div>
+			<a href="#">toe</a>
+			<a href="#">Musical Style</a>
+			<a href="#">Members</a>
+			<a href="#">Albums</a>
+		</div>
 	</div>
+	<div id="content">
+		<div class="page">
+			<div class="big_picture"></div>
+			<section class="content_section" id="band_intro">
+				<h1>toe</h1>
+			</section>
+		</div>
+	</div>
+	<div class="background_block" id="a"></div>
 </body>
 </html>
