@@ -45,7 +45,7 @@ body {
 	z-index: 3;
 	top: 0;
 	background: rgba(5,5,5,0.85);
-	transition: margin-top 0.35s;
+	transition: margin-top 0.25s;
 	transition-timing-function: ease-in;
 }
 
@@ -118,7 +118,8 @@ body {
 	z-index: -1;
 	left: 10px;
 	top: 0;
-	width: 500px;
+	width: 33%;
+	min-width: 200px;
 	height: 100%;
 	background-color: #eee;
 }

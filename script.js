@@ -57,8 +57,8 @@ function onLoad(){
 function linksHide(){
 	var links = document.querySelectorAll("#extend_nav a");
 	for (var i=0; i<links.length; i++){
-		links[i].style.top = -50*(i+1) + "px";
-		links[i].style.opacity = 0.2;
+		links[i].style.top = "-50px";
+		links[i].style.opacity = "0.2";
 		links[i].style.transform = "rotateX(-90deg) translateZ(-50px)";
 	}
 }
@@ -66,7 +66,7 @@ function linksHide(){
 function initLinks(){
 	var links = document.querySelectorAll("#extend_nav a");
 	for (var i=0; i<links.length; i++){
-		links[i].style.transition = "top 0.4s linear 0s, opacity 0.2s linear " + (0.15+0.06*i) + "s, transform 0.2s linear " + (0.08+0.08*i) + "s"
+		links[i].style.transition = "top 0.3s linear 0s, opacity 0.2s linear " + (0.15+0.06*i) + "s, transform 0.15s linear " + (0.08+0.05*i) + "s"
 	}
 }
 
@@ -84,4 +84,12 @@ function setWillChange(){
 	for(var i=0;i<to_blur.length; i++){
 		to_blur[i].style.willChange = "filter";
 	}
+	
+	var nav = document.getElementById("extend_nav");
+	nav.style.willChange = "top";
+	
+	var links = Array.from(document.querySelectorAll("#extend_nav a"));
+	links.map(function(a){
+		a.style.willChange = "opacity, transform";
+	})
 }
