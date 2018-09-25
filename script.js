@@ -49,9 +49,9 @@ function toggle_nav(){
 }
 
 function onLoad(){
+	initLinks();
 	linksHide();
 	setAnimationEventListener();
-	initLinks();
 }
 
 function linksHide(){
@@ -77,4 +77,11 @@ function setAnimationEventListener(){
 	function removeAnimation(){this.classList.remove("spin")}
 	bar.addEventListener('animationend', removeAnimation, false);
 	x_btn.addEventListener('animationend', removeAnimation, false);
+}
+
+function setWillChange(){
+	var to_blur = document.querySelectorAll("body > *:not(#extend_nav)");
+	for(var i=0;i<to_blur.length; i++){
+		to_blur[i].style.willChange = "filter";
+	}
 }
