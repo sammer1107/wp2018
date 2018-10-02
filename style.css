@@ -45,8 +45,6 @@ body {
 	z-index: 3;
 	top: 0;
 	background: rgba(5,5,5,0.85);
-	transition: margin-top 0.25s;
-	transition-timing-function: ease-in;
 }
 
 #link_area {
@@ -69,6 +67,7 @@ body {
 	margin-right: auto;
 	transform-style: preserve-3d;
 	transform-origin: 50% 20%;
+	cursor: pointer;
 	/*background: #eee;*/
 }
 
@@ -87,9 +86,36 @@ body {
 
 #content {
 	width: 70%;
-	margin: 100px auto 0 auto;
-	transition: transform 0.35s;
+	margin: 0 auto 0 auto;
+	transition: transform 0.3s;
 	transition-timing-function: ease-out;
+	perspective: 100px;
+}
+
+.page {
+	position: relative;
+	height: 80vh;
+	padding-top: 10vh;
+	padding-bottom: 10vh;
+	transition: transform 0.25s ease-out; /* for shrinking */
+}
+
+.page h1 {
+	font-size: 50px;
+	margin: 10px 0 10px 0;
+	line-height: 100%;
+}
+
+.page h6 {
+	font-size: 20px;
+	margin: 10px 5px 10px 5px;
+	line-height: 100%;
+	font-weight: lighter;
+}
+
+.page p {
+	margin: 10px 0 10px 0;
+	line-height: 100%;
 }
 
 .big_picture {
@@ -100,27 +126,98 @@ body {
 	background-position: center;
 	background-size: contain;
 	background-repeat: no-repeat;
-	background-image: url("toe.jpg")
 }
 
-.page {
-	position: relative;
+.image {
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
 }
 
-.page h1 {
-	font-size: 50px;
-	margin: 10px 0 10px 0;
-	line-height: 100%;
+#toe .big_picture {
+	background-image: url("toe.jpg");
 }
 
-#a.background_block{
+#style .image {
+	position: absolute;
+	top: 40%;
+	right: -50px;
+	width: 37%;
+	height: 35%;
+	background-image: url("toe_small.jpg");
+}
+
+#style #musical {
+	position: absolute;
+	top: 32%;
+	left: 200px;
+	color: #da1919;
+}
+
+#style h1 {
+	position: absolute;
+	top: 35%;
+	left: 200px;
+}
+
+#style_texts {
+	position: absolute;
+	left: 24%;
+	top: 43%;
+}
+
+#style_texts p:nth-child(1){
+	font-stretch:expanded;
+}
+
+#albums_container {
+	position: absolute;
+	height: 35%;
+	bottom: 24.5%;
+	width: 86%;
+	padding-right: 7%;
+	padding-left: 7%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+#albums_container > div {
+	display: flex;
+	height: 250px;
+	width: 250px;
+	background-color: black;
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	
+}
+
+#albums_container .overlay {
+	background-color: black;
+	opacity: 0;
+	width: 100%;
+	height: 100%;
+	transition: opacity 0.2s;
+}
+
+#albums_container .overlay:hover{
+	opacity: 0.5;
+}
+
+#albums_container > div:nth-child(1){ background-image: url("toe_the_book.jpg") }
+#albums_container > div:nth-child(2){ background-image: url("toe_hear_you.jpg") }
+#albums_container > div:nth-child(3){ background-image: url("toe_latest_number.jpg") }
+
+
+#background_block_a{
 	position: fixed;
-	z-index: -1;
+	z-index: -2;
 	left: 10px;
 	top: 0;
-	width: 33%;
+	bottom: 0;
+	right: 67%;
 	min-width: 200px;
-	height: 100%;
 	background-color: #eee;
 }
 
@@ -131,7 +228,6 @@ body {
 #bar_btn {
 	float: left;
 	cursor: pointer;
-	transition: opacity 2s;
 }
 
 #close_btn {
@@ -139,8 +235,7 @@ body {
 	opacity: 0;
 	left: 25px;
 	top: 15px;
-	color: rgba(255,255,255,0.7);
-	transition: opacity 0.3s ease-in 0s;
+	color: rgba(255,255,255,0.7);	
 	cursor: pointer;
 }
 
@@ -154,14 +249,53 @@ body {
 	height: 20px;
 }
 
+#indicator {
+	height: 80px;
+	width: 30px;
+	position: fixed;
+	right: 0;
+	top: calc(50vh-50px);
+	top: -webkit-calc(50% - 75px);
+	/*background: #555;*/
+}
+
+.dot_container {
+	height: 33.3%;
+	width: 100%;
+	position: relative;
+}
+
+.dot {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 6px;
+	height: 6px;
+	transform: translate(-50%, -50%);
+	background: #cccccc;
+	border-radius: 3px;
+}
+
+.dot_active {
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+	top: calc( 16.66% - 4px); /*set with java script*/
+	bottom: calc( 83.33% - 4px);
+	width: 8px;
+	/*transform: translate(-50%, -50%);*/
+	border-radius: 4px;
+	background: #323232;
+}
+
 .blur {
-	transition: filter 0.3s ease-in 0s;
 	filter: blur(8px);
-	-webkit-filter: blur(8px);
 }
 
 .shrink {
-	transform: scale(0.8, 0.8);
+	transform: scale(0.9, 0.9);
 }
 
 .spin {
@@ -169,14 +303,29 @@ body {
 	animation-duration: 1s;
 }
 
-@-webkit-keyframes spin_animation{
+.dot_transition{
+	animation-name: dot_animation;
+	animation-duration: 1s;
+}
+
+.shadowed {
+	box-shadow: 1px 2px 20px black;
+}
+
+@keyframes spin_animation {
 	0%   { transform: rotate(0deg); filter: blur(0px);}
 	50%  { filter: blur(1px);}
 	100% { transform: rotate(360deg); filter: blur(0px);}
 }
-
-@keyframes spin_animation{
+/*
+@-webkit-keyframes spin_animation {
 	0%   { transform: rotate(0deg); filter: blur(0px);}
 	50%  { filter: blur(1px);}
 	100% { transform: rotate(360deg); filter: blur(0px);}
+}*/
+
+@keyframes dot_animation {
+	0%   { height: 6px;}
+	50%  { height: 33%;}
+	100% { height: 6px;}
 }

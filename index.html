@@ -4,30 +4,57 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link href="https://fonts.googleapis.com/css?family=Emblema+One" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/scrollify/1.0.19/jquery.scrollify.min.js"></script>
 	<script src="script.js"></script>
     <title>FAV. BANDS</title>
 </head>
-<body onload="onLoad()">
+<body>
 	<div id="top_nav">
-		<i class="fa fa-bars fa-lg" id="bar_btn" onclick="toggle_nav()"></i>
+		<i class="fa fa-bars fa-lg nav_toggle" id="bar_btn"></i>
 		<i class="fa fa-search fa-lg" id="search_btn"></i>
 		<h2 class="site_title">FAV. BANDS</h2>
 	</div>
 	<div id="extend_nav">
-		<i class="fa fa-close fa-lg" id="close_btn" onclick="toggle_nav()"></i>
+		<i class="fa fa-close fa-lg nav_toggle" id="close_btn"></i>
 		<div id="link_area">
-			<a href="#toe">toe</a>
-			<a href="#">Musical Style</a>
-			<a href="#">Members</a>
-			<a href="#">Albums</a>
+			<a>toe</a>
+			<a>Musical Style</a>
+			<!--a>Members</a-->
+			<a>Albums</a>
 		</div>
 	</div>
 	<div id="content">
-		<div class="page">
+		<div class="page" id="toe">
 			<div class="big_picture"></div>
-			<h1>toe</h1>
+			<h1>t o e</h1>
+		</div>
+		<div class="page" id="style">
+			<div class="image"></div>
+			<h6 id="musical">musical</h6>
+			<h1>Style</h1>
+			<div id="style_texts">
+				<p>post-rock</p>
+				<p>post-rock</p>
+				<p>post-rock</p>
+				<p>post-rock</p>
+			</div>
+		</div>
+		<div class="page" id="albums">
+			<div id="albums_container">
+				<div class="shadowed"><div class="overlay"></div></div>
+				<div src="toe_hear_you.jpg" class="shadowed"><div class="overlay"></div></div>
+				<div src="toe_latest_number.jpg" class="shadowed"><div class="overlay"></div></div>
+			</div>
 		</div>
 	</div>
-	<div class="background_block" id="a"></div>
+	<div id="indicator">
+		<div class="dot_container"><div class="dot"></div></div>
+		<div class="dot_container"><div class="dot"></div></div>
+		<div class="dot_container"><div class="dot"></div></div>
+		<div class="dot_active"></div>
+	</div>
+	<div id="background_block_a"></div>
 </body>
 </html>
