@@ -165,18 +165,18 @@ $(document).ready(function(){
 		},
 	});
 	
-	$(".album_img").stop().hover(function(){
-			$(this).find("h2").animate({
+	$(".album_img").hover(function(){
+			$(this).find("h2").stop().animate({
 				"opacity": "1",
 			}, "fast");
-			$(this).find(".overlay").animate({
+			$(this).find(".overlay").stop().animate({
 				"opacity": "0.6",
 			}, 100);
 		}, function(){
-			$(this).find("h2").animate({
+			$(this).find("h2").stop().animate({
 				"opacity": "0",
 			});
-			$(this).find(".overlay").animate({
+			$(this).find(".overlay").stop().animate({
 				"opacity": "0",
 			}, 100);
 		});
