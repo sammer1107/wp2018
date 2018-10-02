@@ -142,32 +142,73 @@ body {
 	position: absolute;
 	top: 40%;
 	right: -50px;
-	width: 37%;
-	height: 35%;
+    width: 370px;
+    height: 250px;
 	background-image: url("toe_small.jpg");
 }
 
 #style #musical {
 	position: absolute;
-	top: 32%;
-	left: 200px;
+	top: 35px;
+	left: 30px;
 	color: #da1919;
 }
 
 #style h1 {
 	position: absolute;
-	top: 35%;
-	left: 200px;
+	top: 53px;
+	left: 31px;
+}
+
+#style_text_container {
+	position: absolute;
+	left: 12vw;
+    top: 28vh;
+	width: 500px;
+	height: 300px;
+	margin: 0;
 }
 
 #style_texts {
 	position: absolute;
-	left: 24%;
-	top: 43%;
+	left: 50px;
+	top: 110px;
 }
 
 #style_texts p:nth-child(1){
-	font-stretch:expanded;
+	color: #888;
+	font-size: 18px;
+	letter-spacing: 8px;
+}
+
+#style_texts p:nth-child(2){
+	color: #444;
+	font-size: 24px;
+	letter-spacing: 2px;
+	font-weight: 800;
+	margin-left: -8px;
+}
+
+#style_texts p:nth-child(3){
+	margin-top: -5px;
+	color: #fff;
+	font-size: 28px;
+	letter-spacing: 3px;
+	font-weight: 900;
+	margin-left: 8px;
+}
+
+#style_texts p:nth-child(4){
+	position: relative;
+	top: -45px;
+    left: 220px;
+	font-size: 18px;
+	letter-spacing: 2px;
+}
+
+.page#albums > h1{
+	text-align: center;
+	margin-top: 50px;
 }
 
 #albums_container {
@@ -182,15 +223,26 @@ body {
 	justify-content: space-between;
 }
 
-#albums_container > div {
+#albums_container .album_img {
+	position: relative;
 	display: flex;
 	height: 250px;
 	width: 250px;
-	background-color: black;
 	background-position: center;
-	background-size: contain;
+	background-size: cover;
 	background-repeat: no-repeat;
 	
+}
+
+.album_img h2 {
+	z-index: 1;
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	color: white;
+	opacity: 0;
 }
 
 #albums_container .overlay {
@@ -201,13 +253,9 @@ body {
 	transition: opacity 0.2s;
 }
 
-#albums_container .overlay:hover{
-	opacity: 0.5;
-}
-
-#albums_container > div:nth-child(1){ background-image: url("toe_the_book.jpg") }
-#albums_container > div:nth-child(2){ background-image: url("toe_hear_you.jpg") }
-#albums_container > div:nth-child(3){ background-image: url("toe_latest_number.jpg") }
+#albums_container > .album_img:nth-child(1){ background-image: url("toe_the_book.jpg") }
+#albums_container > .album_img:nth-child(2){ background-image: url("toe_hear_you.jpg") }
+#albums_container > .album_img:nth-child(3){ background-image: url("toe_latest_number.jpg") }
 
 
 #background_block_a{
