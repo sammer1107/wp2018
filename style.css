@@ -230,8 +230,7 @@ body {
 	width: 250px;
 	background-position: center;
 	background-size: cover;
-	background-repeat: no-repeat;
-	
+	background-repeat: repeat;	
 }
 
 .album_img h2 {
