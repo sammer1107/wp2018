@@ -1,0 +1,15 @@
+#student_list_container {
+	margin: 10px;
+	height: 300px;
+	width: 300px;
+	overflow: scroll;
+}
+
+form p {
+	display: inline;
+}
+
+.form_field {
+	height: 25px;
+	margin: 10px;
+}
