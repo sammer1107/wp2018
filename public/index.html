@@ -3,33 +3,38 @@
 <head>
 	<meta charset="UTF-8">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="style.css">
+  <script src="script.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
 	<title>HTTP & Ajax</title>
 </head>
 <body>
 	<button id="list_btn">list all students</button>
 	<h3>All students:</h3>
-	<div class="student_list"></div>
-	<form action="/search" method="get">
-		Student ID: <input type="text" name="search_id">
-		<button id="search_btn" type="submit">Search</button>
-	</form>
-	<h3>Search result:</h3>
-	<div class="student_list"></div>
-	<form>
+	<div class="list" id="list_student"></div>
+  <form action="/search" method="get">
+    <div class="form_field">
+		  Student ID: <input type="text" name="search_id">
+    </div>  
+    <button id="search_btn" type="submit">Search</button>
+  </form>
+  <div id="search_result_area">
+	  <h3>Search result: </h3>
+	  <h3 id="search_result"></h3>
+  </div>  
+  <form action="/add" method="post">
 		<div class="form_field">
 		<p>Student ID: </p><input type="text" name="new_id">
 		</div>
 		<div class="form_field">
 		<p>Student Name: </p><input type="text" name="new_name">
 		</div>
-		<button id="add_btn">Add new student</button>
+		<button id="add_btn" type="submit">Add new student</button>
 	</form>
-	<form>
+	<form action="/delete" method="post">
 		<div class="form_field">
-			<p>Student ID: </p><input type="text" name="search_id">
+			<p>Student ID: </p><input type="text" name="del_id">
 		</div>
-		<button id="delete_btn">Delete student</button>
+    <button id="delete_btn" type="submit">Delete student</button>
 	</form>
 </body>
 </html>
