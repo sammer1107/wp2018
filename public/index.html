@@ -7,14 +7,15 @@
 	<title>HTTP & Ajax</title>
 </head>
 <body>
-	<button type="button">list all students</button>
+	<button id="list_btn">list all students</button>
 	<h3>All students:</h3>
-	<div id="student_list_container"></div>
-	<form>
+	<div class="student_list"></div>
+	<form action="/search" method="get">
 		Student ID: <input type="text" name="search_id">
-		<button type="submit">Search</button>
+		<button id="search_btn" type="submit">Search</button>
 	</form>
 	<h3>Search result:</h3>
+	<div class="student_list"></div>
 	<form>
 		<div class="form_field">
 		<p>Student ID: </p><input type="text" name="new_id">
@@ -22,13 +23,13 @@
 		<div class="form_field">
 		<p>Student Name: </p><input type="text" name="new_name">
 		</div>
-		<button type="submit">Add new student</button>
+		<button id="add_btn">Add new student</button>
 	</form>
 	<form>
 		<div class="form_field">
 			<p>Student ID: </p><input type="text" name="search_id">
 		</div>
-		<button type="submit">Delete student</button>
+		<button id="delete_btn">Delete student</button>
 	</form>
 </body>
 </html>
