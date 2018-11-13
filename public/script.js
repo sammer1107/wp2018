@@ -32,7 +32,7 @@ $(document).ready(function(){
     // console.log($("input[name='new_id']").val())
     $.ajax({
       method: "post",
-      url: "add",
+      url: "/add",
       data: {
         "new_id": $("input[name='new_id']").val(),
         "new_name": $("input[name='new_name']").val()
